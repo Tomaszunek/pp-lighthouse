@@ -41,12 +41,7 @@ const reportKeys = {
             "details": {
                 "scale": "scale"
             }
-        },
-        "final-screenshot": {
-            "details": {
-                "timestamp": "timestamp"
-            }
-        },
+        },        
         "estimated-input-latency": {
             "score": "score",
             "rawValue": "rawValue"
@@ -95,38 +90,7 @@ const reportKeys = {
             "rawValue": "rawValue"
         },
         "metrics": {
-            "rawValue": "rawValue", "details": {
-                "items": [
-                    {
-                        "firstContentfulPaint": 602,
-                        "firstMeaningfulPaint": 602,
-                        "firstCPUIdle": 1448,
-                        "interactive": 1642,
-                        "speedIndex": 1881,
-                        "estimatedInputLatency": 52,
-                        "observedNavigationStart": 0,
-                        "observedNavigationStartTs": 6281966757,
-                        "observedFirstPaint": 469,
-                        "observedFirstPaintTs": 6282436059,
-                        "observedFirstContentfulPaint": 469,
-                        "observedFirstContentfulPaintTs": 6282436063,
-                        "observedFirstMeaningfulPaint": 469,
-                        "observedFirstMeaningfulPaintTs": 6282436063,
-                        "observedTraceEnd": 4277,
-                        "observedTraceEndTs": 6286243597,
-                        "observedLoad": 1021,
-                        "observedLoadTs": 6282987373,
-                        "observedDomContentLoaded": 441,
-                        "observedDomContentLoadedTs": 6282407983,
-                        "observedFirstVisualChange": 470,
-                        "observedFirstVisualChangeTs": 6282436757,
-                        "observedLastVisualChange": 4170,
-                        "observedLastVisualChangeTs": 6286136757,
-                        "observedSpeedIndex": 777,
-                        "observedSpeedIndexTs": 6282744192
-                    }
-                ]
-            }
+            "rawValue": "rawValue"
         },
         "offline-start-url": {
             "score": "score",
