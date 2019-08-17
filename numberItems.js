@@ -1,4 +1,4 @@
-const numberJson = {
+const reportKeys = {
     "environment": {
         "benchmarkIndex": "benchmarkIndex"
     },
@@ -197,9 +197,6 @@ const numberJson = {
             "rawValue": "rawValue"
         },
         "offscreen-images": {
-            "id": "offscreen-images",
-            "title": "Defer offscreen images",
-            "description": "Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images).",
             "score": "score",
             "rawValue": "rawValue",
             "details": {
@@ -318,5 +315,5 @@ const numberJson = {
 }
 
 module.exports = {
-    numberJson
+    reportKeys
 }
