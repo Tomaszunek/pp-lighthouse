@@ -37,18 +37,18 @@ const generateExcelRaport = (reportArr) => {
 
     excelRaports = [
         {
-            name: 'Urls raports', // <- Specify sheet name (optional)
-            heading: heading, // <- Raw heading array (optional)
-            merges: merges, // <- Merge cell ranges
+            name: 'Urls raports',
+            heading,
+            merges,
             specification: generateSpecification({url: "url", ...selectedKeys}), // <- Report specification
-            data: filtredArrayKeys // <-- Report data
+            data: filtredArrayKeys
         },
         {
-            name: 'Mass raport', // <- Specify sheet name (optional)
-            heading: heading, // <- Raw heading array (optional)
-            merges: merges, // <- Merge cell ranges
+            name: 'Mass raport',
+            heading,
+            merges,
             specification: generateSpecification({url: "url", ...selectedKeys}), // <- Report specification
-            data: filtredArrayKeys // <-- Report data
+            data: filtredArrayKeys
         }
     ]
     return excelRaports;
