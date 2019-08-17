@@ -8,8 +8,8 @@ const request = require('request');
 const util = require('util');
 const fs = require('fs');
 const excelGenerator = require('node-excel-export');
-const { makeReportMass } = require('./report-mass');
-const { generateExcelRaport } = require('./report-excel');
+const { makeReportMass } = require('./lib/report-mass');
+const { generateExcelRaport } = require('./lib/report-excel');
 const json = require('./results/report100.json');
 
 (async () => {
