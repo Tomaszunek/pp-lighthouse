@@ -295,6 +295,8 @@ const reportKeys = {
     }
 }
 
+const excelElements = null;
 module.exports = {
-    reportKeys
+    reportKeys,
+    excelElements,
 }
