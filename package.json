@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",        
+    "test:coverage": "jest --coverage --colors"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +17,8 @@
     "node-excel-export": "^1.4.4",
     "puppeteer": "^1.18.1-next.1562564221866",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }
