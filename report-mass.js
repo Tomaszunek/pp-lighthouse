@@ -81,16 +81,33 @@ const setValueInArray = (lhr, key, value) => {
     }
 }
 
+const generateMetricsDetailsItems = (jsonArr) => {
+    const jsonMetricsArray = [];
+    for(let i in jsonArr) {
+        jsonMetricsArray.push(jsonArr[i]['audits']['metrics']['details']['items'][0])
+    }
+    return jsonMetricsArray;
+}
+
+const recalculateMetrics = (lhr, jsonArr) => {
+    const metrics = lhr;
+    const metricsItemsArray = generateMetricsDetailsItems(jsonArr);
+    const arrValues = generateArrayofValues(metricsItemsArray);
+    const averageValues = generateAverageArr(arrValues);
+    metrics['audits']['metrics']['details']['items'][0] = averageValues;
+    return metrics;    
+}
+
 const makeReportMass = (reportArr) => {
     const lhr = reportArr[0];
-    // const reportKeysArr = reportObjToStringsArr(lhr);
     const mathKeysArr = reportObjToStringsArr(reportKeys);
     const reportArrayKeys = reportArr.map(report => reportObjToStringsArr(report));
     const filtredArrayKeys = reportArrayKeys.map(report => filterMathKeys(report, mathKeysArr))
     const jsonValueArr = generateArrayofValues(filtredArrayKeys);
     const generatedAverageJson = generateAverageArr(jsonValueArr);
     const rebuildedAverageResults = rebuildArray(generatedAverageJson, lhr);
-    return rebuildedAverageResults;
+    const lhrOverideMetrics = recalculateMetrics(rebuildedAverageResults, reportArr);
+    return lhrOverideMetrics;
 }
 
 module.exports = {

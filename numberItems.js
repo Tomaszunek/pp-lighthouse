@@ -275,6 +275,23 @@ const reportKeys = {
         "link-text": {
             "score": "score",
         }
+    },
+    "categories": {
+        "performance": {
+            "score": "score",
+        },
+        "pwa": {
+            "score": "score",
+        },
+        "accessibility": {
+            "score": "score",
+        },
+        "best-practices": {
+            "score": "score",
+        },
+        "seo": {
+            "score": "score",
+        }
     }
 }
 
