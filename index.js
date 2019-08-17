@@ -6,11 +6,10 @@ const config = require('lighthouse/lighthouse-core/config/lr-desktop-config.js')
 const reportGenerator = require('lighthouse/lighthouse-core/report/report-generator');
 const request = require('request');
 const util = require('util');
-const fs = require('fs');
 const excelGenerator = require('node-excel-export');
 const { makeReportMass } = require('./lib/report-mass');
 const { generateExcelRaport } = require('./lib/report-excel');
-const json = require('./results/report100.json');
+const { writeToFile } = require('./lib/raportUtils');
 
 (async () => {
 
@@ -88,15 +87,6 @@ const json = require('./results/report100.json');
     await browser.disconnect();
     await chrome.kill();
 })();
-
-
-const writeToFile = (nameFile, item) => {
-    fs.writeFile('./results/' + nameFile, item, (err) => {
-        if (err) {
-            console.error(err);
-        }
-    });
-}
 
 // const reportArr = [json, json, json, json, json];
 
