@@ -16,7 +16,7 @@ const configLogin = require('./config/login.json');
 
     const loginURL = 'https://github.com/login';
     const logoutURL = 'https://idp.nature.com/logout/natureuser?redirect_uri=https%3A%2F%2Fwww.nature.com';
-
+    const limit = 2;
     const opts = {
         //chromeFlags: ['--headless'],
         logLevel: 'info',
@@ -53,6 +53,7 @@ const configLogin = require('./config/login.json');
     )
     links = links.filter(link => link.includes('https://'))
     links = [...new Set(links)];
+    links.length = Math.min(limit, links.length);
     console.log(page.url(), links);
 
     // Run Lighthouse.
