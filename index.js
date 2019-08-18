@@ -48,13 +48,20 @@ const configLogin = require('./config/login.json');
     await page.type(configLogin.password.inputName, configLogin.password.passwordValue);
     await page.click(configLogin.submit.inputName);
 
-    console.log(page.url());
+    let links = await page.evaluate(
+        () => [...document.querySelectorAll('a')].map(elem => elem.href)
+    )
+    links = links.filter(link => link.includes('https://'))
+    links = [...new Set(links)];
+    console.log(page.url(), links);
 
     // Run Lighthouse.
 
     const reports = [];
 
-    for (let i = 0; i <= 2; i++) {
+    for (let link of links) {
+        console.log(link)
+        await page.goto(link, { waitUntil: 'networkidle2' });
         const report = await lighthouse(page.url(), opts, config).then(results => {
             return results;
         });
