@@ -10,6 +10,7 @@ const excelGenerator = require('node-excel-export');
 const { makeReportMass } = require('./lib/report-mass');
 const { generateExcelRaport } = require('./lib/report-excel');
 const { writeToFile } = require('./lib/raportUtils');
+const configLogin  = require('./config/login.json')
 
 (async () => {
 
@@ -42,6 +43,11 @@ const { writeToFile } = require('./lib/raportUtils');
     page = (await browser.pages())[0];
     await page.setViewport({ width: 1200, height: 900 });
     await page.goto(loginURL, { waitUntil: 'networkidle2' });
+
+    await page.type(configLogin.login.inputName, configLogin.login.loginValue);
+    await page.type(configLogin.password.inputName, configLogin.password.passwordValue);
+    await page.click(configLogin.submit.inputName);
+    await page.waitForNavigation()
 
     console.log(page.url());
 

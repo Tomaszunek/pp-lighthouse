@@ -1,0 +1,13 @@
+{
+    "login": {
+        "inputName": "",
+        "loginValue": ""
+    },
+    "password": {
+        "inputName": "",
+        "passwordValue": ""
+    },
+    "submit": {
+        "inputName" : ""
+    }
+}
