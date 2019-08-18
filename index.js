@@ -10,11 +10,11 @@ const excelGenerator = require('node-excel-export');
 const { makeReportMass } = require('./lib/report-mass');
 const { generateExcelRaport } = require('./lib/report-excel');
 const { writeToFile } = require('./lib/raportUtils');
-const configLogin  = require('./config/login.json')
+const configLogin = require('./config/login.json');
 
 (async () => {
 
-    const loginURL = 'https://www.google.pl/maps';
+    const loginURL = 'https://github.com/login';
     const logoutURL = 'https://idp.nature.com/logout/natureuser?redirect_uri=https%3A%2F%2Fwww.nature.com';
 
     const opts = {
@@ -47,7 +47,6 @@ const configLogin  = require('./config/login.json')
     await page.type(configLogin.login.inputName, configLogin.login.loginValue);
     await page.type(configLogin.password.inputName, configLogin.password.passwordValue);
     await page.click(configLogin.submit.inputName);
-    await page.waitForNavigation()
 
     console.log(page.url());
 
